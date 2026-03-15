@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Panel - Roblox RP</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --dark: #1a1a2e;
+            --card: #16213e;
+            --text: #ffffff;
+            --accent: #e94560;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #0f3460;
+            padding: 20px;
+            position: fixed;
+        }
+
+        .sidebar h2 { color: var(--accent); text-align: center; }
+
+        .menu-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover { background: var(--primary); }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 290px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--card);
+            padding-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 5px solid var(--primary);
+        }
+
+        /* Formular Sancțiuni */
+        .sanction-form {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #0f3460;
+            border: 1px solid #1a1a2e;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>STAFF PANEL</h2>
+        <div class="menu-item">🏠 Dashboard</div>
+        <div class="menu-item">⚖️ Log Sancțiuni</div>
+        <div class="menu-item">🕒 Pontaj (Clock-in)</div>
+        <div class="menu-item">📅 Cereri Concediu</div>
+        <div class="menu-item" style="margin-top: 50px; color: #e94560;">🚪 Deconectare</div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Salut, Admin! 👋</h1>
+            <div class="user-info">Server: 🟢 Online | Jucători: 45/100</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Ore Active</h3>
+                <p style="font-size: 24px; color: var(--primary);">12.5h</p>
+            </div>
+            <div class="stat-card">
+                <h3>Sancțiuni Azi</h3>
+                <p style="font-size: 24px; color: var(--primary);">4</p>
+            </div>
+            <div class="stat-card">
+                <h3>Ticket-uri</h3>
+                <p style="font-size: 24px; color: var(--primary);">2 Deschise</p>
+            </div>
+        </div>
+
+        <div class="sanction-form">
+            <h2>📜 Adaugă Sancțiune Nouă</h2>
+            <form>
+                <input type="text" placeholder="Nume Jucător (Roblox ID)" required>
+                <select>
+                    <option value="warn">Warn (Avertisment)</option>
+                    <option value="kick">Kick</option>
+                    <option value="ban">Ban (Interdicție)</option>
+                </select>
+                <textarea placeholder="Motivul sancțiunii și dovezi (link imagini/video)..." rows="4"></textarea>
+                <button type="button" onclick="alert('Sancțiune salvată în baza de date!')">Trimite Sancțiunea</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
